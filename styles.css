@@ -491,24 +491,40 @@ footer {
 
 /* 11. Responsive */
 @media (min-width: 769px) {
-  /* Ocultar el botón de hamburguesa en escritorio */
-  .menu-toggle {
-    display: none;
+  header .header-content {
+    /* Centra el contenido del header */
+    justify-content: center;
+    padding: 0 1em;
   }
 
-  .barra-navegacion .nav-links {
-    transform: translateX(0);
-    /* Asegura que el menú esté visible en escritorio */
+  header .header-content a {
+    /* El enlace debe ser un contenedor que se pueda centrar */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  header img {
+    max-width: 180px;
   }
 }
 
 @media (min-width: 768px) {
-  #fecha_y_ubicacion {
-    grid-template-columns: 1fr 1fr;
+  header .header-content {
+    /* Centra el contenido del header */
+    justify-content: center;
+    padding: 0 1em;
   }
 
-  .hero h1 {
-    font-size: 4rem;
+  header .header-content a {
+    /* El enlace debe ser un contenedor que se pueda centrar */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  header img {
+    max-width: 180px;
   }
 }
 
@@ -536,6 +552,21 @@ footer {
 
 /* Responsive general (ajustes existentes) */
 @media (max-width: 768px) {
+  header .header-content {
+    /* Centra el contenido del header */
+    justify-content: center;
+    padding: 0 1em;
+    max-width: 120px;
+  }
+
+  header .header-content a {
+    /* El enlace debe ser un contenedor que se pueda centrar */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  
   .hero {
     padding: 4em 1em;
   }
