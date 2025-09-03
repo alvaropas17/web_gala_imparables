@@ -287,15 +287,6 @@ body.menu-open {
   border-bottom: 1px solid #e0e0e0; /* Línea de separación sutil */
 }
 
-/* Invierte el orden de la grilla en elementos pares para alternar la posición de la imagen */
-.premio-item:nth-child(even) {
-  grid-template-columns: 1fr 1fr;
-}
-
-.premio-item:nth-child(even) .premio-imagen {
-  order: -1; /* Mueve la imagen a la primera columna en los premios pares */
-}
-
 .premio-item:last-child {
   border-bottom: none; /* Elimina la línea en el último premio */
 }
