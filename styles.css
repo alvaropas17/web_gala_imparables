@@ -273,20 +273,94 @@ body.menu-open {
 
 /* --- FIN ESTILOS DE NAVEGACIÓN --- */
 
-.texto-premios {
-  /* margin: 0.8em 0 1em 2; */
-  font-size: 1rem;
-  margin-right: 17vw;
-  color: #333;
-  line-height: 1.4;
+/* --------------------
+   Estilos para la sección de premios
+   -------------------- */
+
+.premio-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Una columna para texto, una para imagen */
+  gap: 2em;
+  align-items: center;
+  margin-bottom: 2.5em; /* Espacio entre cada premio */
+  padding-bottom: 2em;
+  border-bottom: 1px solid #e0e0e0; /* Línea de separación sutil */
 }
 
-.img-premios {
-  width: 20em;
+/* Invierte el orden de la grilla en elementos pares para alternar la posición de la imagen */
+.premio-item:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.premio-item:nth-child(even) .premio-imagen {
+  order: -1; /* Mueve la imagen a la primera columna en los premios pares */
+}
+
+.premio-item:last-child {
+  border-bottom: none; /* Elimina la línea en el último premio */
+}
+
+.premio-item p {
+  margin-bottom: 0; /* Elimina el margen inferior extra de los párrafos en esta sección */
+}
+
+.premio-info h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.2em;
+}
+
+.premio-info strong {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+.premio-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.premio-imagen img {
+  width: 100%;
+  max-width: 25em; /* Tamaño máximo para la imagen */
   height: auto;
-  margin-left: 20vw;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* --------------------
+   Media Query para el diseño responsivo (móviles)
+   -------------------- */
+@media (max-width: 768px) {
+  .premio-item {
+    grid-template-columns: 1fr; /* Una sola columna en dispositivos pequeños */
+    gap: 1.5em;
+    text-align: center;
+  }
+
+  .premio-item:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .premio-item:nth-child(even) .premio-imagen {
+    order: 0; /* Restablece el orden de la imagen */
+  }
+
+  .premio-info,
+  .premio-imagen {
+    text-align: left; /* Alinea el texto a la izquierda en móviles */
+  }
+
+  .premio-imagen img {
+    margin-top: 1em; /* Agrega espacio entre el texto y la imagen */
+    max-width: 100%;
+  }
+
+  .premio-item h3 {
+    text-align: center; /* Centra el título del premio en móviles */
+  }
+}
 
 /* 5. Sección Hero */
 .hero {
@@ -494,7 +568,6 @@ footer {
   }
 
   .carousel-slide {
-    
   }
 
   .carousel-button {
