@@ -1,317 +1,680 @@
 /* 1. Importar tipografías Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap");
 
 /* 2. Variables de color */
 :root {
-    --color-bg: #f5f8fa;
-    --color-primary: #005691;
-    --color-accent: #00c6a7;
-    --color-dark: #102a43;
-    --color-light: #ffffff;
-    --transition: 0.3s ease;
+  --color-bg: #f5f8fa;
+  --color-primary: #005691;
+  --color-accent: #00c6a7;
+  --color-dark: #102a43;
+  --color-light: #ffffff;
+  --transition: 0.3s ease;
+  --color-header-bg: #0b1658;
+  /* Color de fondo del header */
+  --color-sidebar-bg: #1a2a4a;
+  /* Color de fondo del sidebar (similar a la imagen) */
+  --color-sidebar-text: #ffffff;
+  /* Color de texto del sidebar */
+  --color-sidebar-hover: #00c6a7;
+  /* Color de hover del sidebar */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* 3. Reset y base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    line-height: 1.6;
-    color: var(--color-dark);
-    background: var(--color-bg);
+  font-family: "Lato", sans-serif;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background: var(--color-bg);
 }
 
 h1,
 h2,
 h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--color-primary);
-    margin-bottom: 0.5em;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-primary);
+  margin-bottom: 0.5em;
 }
 
 p,
 li {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /* 4. Header y navegación fija */
 header {
-    position: sticky;
-    top: 0;
-    background: rgba(11, 22, 88, 255);
-    backdrop-filter: blur(6px);
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0.5em 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: var(--color-header-bg);
+  padding: 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  /* Para posicionar el header-content */
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  /* Centrar el logo en escritorio */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
 header img {
-    height: 50px;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5em;
+/* --- ESTILOS DE NAVEGACIÓN --- */
+/* Barra de navegación principal (escritorio) */
+.barra-navegacion {
+  background: var(--color-header-bg);
+  padding: 0.75em 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--color-bg);
-    font-weight: 600;
-    transition: color var(--transition);
+/* Enlaces de navegación en escritorio */
+.barra-navegacion .nav-links {
+  list-style: none;
+  display: flex;
+  /* Mostrar como fila en escritorio */
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
-nav a:hover {
-    color: var(--color-accent);
+.barra-navegacion .nav-links a {
+  text-decoration: none;
+  color: var(--color-light);
+  /* Cambiado a color claro para el texto de navegación principal */
+  font-weight: 600;
+  transition: color var(--transition);
+  padding: 0.5em 0;
+  position: relative;
 }
+
+.barra-navegacion .nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* Animación de underline premium en hover */
+.barra-navegacion .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.barra-navegacion .nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Estilos para el botón de hamburguesa */
+.menu-toggle {
+  display: none;
+  /* Ocultar por defecto en escritorio */
+  background: none;
+  border: none;
+  color: var(--color-light);
+  font-size: 2em;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  z-index: 1001;
+  /* Asegura que esté encima del overlay */
+}
+
+/* Overlay (oscurece el fondo cuando el menú está abierto) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Oscurece el fondo */
+  z-index: 998;
+  /* Detrás del menú, pero delante del contenido */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Estado activo del overlay */
+body.menu-open .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Bloquear scroll del body cuando el menú está abierto */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* --- Media Query para Responsive (Móviles) --- */
+@media (max-width: 768px) {
+  header .header-content {
+    justify-content: space-between;
+    /* Alinea logo a la izquierda y hamburguesa a la derecha */
+    padding: 0 1em;
+    /* Ajusta el padding para móviles */
+  }
+
+  header img {
+    max-width: 180px;
+    /* Tamaño del logo en móvil */
+  }
+
+  .menu-toggle {
+    display: block;
+    /* Mostrar el botón de hamburguesa en móviles */
+  }
+
+  .barra-navegacion {
+    background: none;
+    /* Elimina el fondo de la barra de navegación principal */
+    box-shadow: none;
+    /* Elimina la sombra de la barra de navegación principal */
+    position: static;
+    /* Elimina el sticky de la barra de navegación en móvil */
+    padding: 0;
+    display: block;
+    /* Vuelve a block para que el nav-links pueda posicionarse de forma absoluta */
+  }
+
+  /* Ocultar la lista de navegación por defecto y prepararla para la transición */
+  .barra-navegacion .nav-links {
+    position: fixed;
+    /* Posiciona el menú fuera de la pantalla */
+    top: 0;
+    left: 0;
+    /* Inicia desde la izquierda */
+    height: 100vh;
+    /* Altura completa de la ventana */
+    width: 250px;
+    /* Ancho del menú lateral (similar a la imagen) */
+    background: var(--color-sidebar-bg);
+    /* Fondo del menú lateral */
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Alinea los elementos arriba */
+    align-items: flex-start;
+    /* Alinea los elementos a la izquierda */
+    padding: 2em 1em;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%);
+    /* Oculta el menú a la izquierda */
+    transition: transform 0.4s ease-in-out;
+    /* Transición suave al deslizar */
+    z-index: 999;
+    /* Asegura que esté encima del contenido */
+    gap: 0;
+    /* Elimina el gap en el menú lateral */
+  }
+
+  /* Estado activo del menú (cuando está abierto) */
+  .barra-navegacion .nav-links.active {
+    transform: translateX(0);
+    /* Desliza el menú a la vista */
+  }
+
+  .barra-navegacion .nav-links li {
+    margin: 0.75em 0;
+    /* Espaciado entre los elementos del menú */
+    width: 100%;
+  }
+
+  .barra-navegacion .nav-links a {
+    font-size: 1.1em;
+    /* Tamaño de fuente más grande para la legibilidad en móvil */
+    color: var(--color-sidebar-text);
+    /* Color de texto claro para el sidebar */
+    padding: 0.75em 1em;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: left;
+
+    /* Alinea el texto a la izquierda */
+    /* Eliminar animación de underline en móvil si no la deseas en el sidebar */
+    &::after {
+      content: none;
+    }
+  }
+
+  .barra-navegacion .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo sutil al hacer hover */
+    color: var(--color-sidebar-hover);
+    /* Color de hover para el sidebar */
+  }
+}
+
+/* --- FIN ESTILOS DE NAVEGACIÓN --- */
 
 /* 5. Sección Hero */
 .hero {
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url('imagenes/fecha_gala.jpeg') center/cover no-repeat;
-    color: var(--color-light);
-    text-align: center;
-    padding: 6em 1em;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./imagenes/manos_y_caras.jpeg);
+  color: var(--color-light);
+  text-align: center;
+  padding: 6em 1em;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5em;
+  font-size: 3rem;
+  margin-bottom: 0.2em;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5em;
+  color: white;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    font-weight: 300;
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 /* 6. Contenedores de sección */
 .article {
-    max-width: 900px;
-    background: var(--color-light);
-    margin: 3em auto;
-    padding: 2em;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 900px;
+  background: var(--color-light);
+  margin: 3em auto;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .article ul {
-    list-style: inside disc var(--color-accent);
-    padding-left: 1em;
+  list-style: inside disc var(--color-accent);
+  padding-left: 1em;
 }
 
 #fecha_y_ubicacion {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
 }
 
 #fecha_y_ubicacion iframe {
-    width: 100%;
-    height: 300px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 7. Botones atractivos */
 button {
-    background: var(--color-accent);
-    color: var(--color-light);
-    border: none;
-    padding: 0.75em 1.5em;
-    border-radius: 50px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
+  background: var(--color-accent);
+  color: var(--color-light);
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
 }
 
 button:hover {
-    background: var(--color-primary);
-    transform: translateY(-2px);
+  background: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 /* 8. Grillas para patrocinadores */
 #patrocinadores ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1.5em;
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5em;
+  align-items: center;
+  justify-items: center;
 }
 
 #patrocinadores li {
-    background: var(--color-light);
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    width: 100%;
-    text-align: center;
+  list-style: none;
+  background: var(--color-light);
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: center;
 }
 
 /* 9. Galería Fotos y Vídeos (preview) */
 #fotos-videos .article {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
 }
 
 #fotos-videos .article div {
-    background: #ddd;
-    height: 140px;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
+  background: #ddd;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
 }
 
 #fotos-videos .article div:hover::after {
-    content: 'Ver más';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.4);
-    color: var(--color-light);
-    font-weight: 700;
-    font-size: 1.1rem;
+  content: "Ver más";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--color-light);
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 /* 10. Footer limpio */
 footer {
-    text-align: center;
-    padding: 2em 1em;
-    background: var(--color-primary);
-    color: var(--color-light);
-    margin-top: 4em;
+  text-align: center;
+  padding: 2em 1em;
+  background: var(--color-primary);
+  color: var(--color-light);
+  margin-top: 4em;
 }
 
 /* 11. Responsive */
-@media (min-width: 768px) {
-    #fecha_y_ubicacion {
-        grid-template-columns: 1fr 1fr;
-    }
+@media (min-width: 769px) {
+  /* Ocultar el botón de hamburguesa en escritorio */
+  .menu-toggle {
+    display: none;
+  }
 
-    .hero h1 {
-        font-size: 4rem;
-    }
+  .barra-navegacion .nav-links {
+    transform: translateX(0);
+    /* Asegura que el menú esté visible en escritorio */
+  }
+}
+
+@media (min-width: 768px) {
+  #fecha_y_ubicacion {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
 }
 
 /* Estilo para lista de programación */
 .agenda {
-    /* list-style: none; */
-    padding-left: 0;
-    margin-top: 1em;
+  padding-left: 0;
+  margin-top: 1em;
 }
 
 .agenda li {
-    background: #f0f4f8;
-    list-style: none;
-    padding: 1em;
-    margin-bottom: 0.75em;
-    border-left: 6px solid var(--color-primary);
-    border-radius: 8px;
-    font-size: 1rem;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  background: #f0f4f8;
+  list-style: none;
+  padding: 1em;
+  margin-bottom: 0.75em;
+  border-left: 6px solid var(--color-primary);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .agenda li strong {
-    color: var(--color-accent);
-    margin-right: 0.5em;
+  color: var(--color-accent);
+  margin-right: 0.5em;
 }
 
-/* ... [Todo tu código actual se mantiene arriba sin cambios] ... */
-
-/* 11. Responsive general */
+/* Responsive general (ajustes existentes) */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1em;
-    }
+  .hero {
+    padding: 4em 1em;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 0.75em;
-        margin-top: 0.5em;
-        width: 100%;
-    }
+  .hero h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
 
-    nav li {
-        width: 100%;
-    }
+  .hero p {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
 
-    nav a {
-        display: block;
-        padding: 0.5em;
-        width: 100%;
-        border-radius: 5px;
-        transition: background var(--transition);
-    }
+  .article {
+    padding: 1.5em 1em;
+    margin: 2em 1em;
+  }
 
-    nav a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+  button {
+    width: 100%;
+    max-width: 320px;
+    margin: 1em auto 0 auto;
+  }
 
-    .hero {
-        padding: 4em 1em;
-    }
+  #fecha_y_ubicacion {
+    grid-template-columns: 1fr;
+  }
 
-    .hero h1 {
-        font-size: clamp(1.8rem, 6vw, 2.5rem);
-    }
+  #fotos-videos .article {
+    grid-template-columns: 1fr;
+  }
 
-    .hero p {
-        font-size: clamp(1rem, 4vw, 1.25rem);
-    }
+  .carousel-slide {
+    
+  }
 
-    .article {
-        padding: 1.5em 1em;
-        margin: 2em 1em;
-    }
-
-    button {
-        width: 100%;
-        max-width: 320px;
-        margin: 1em auto 0 auto;
-    }
-
-    #fecha_y_ubicacion {
-        grid-template-columns: 1fr;
-    }
-
-    #fotos-videos .article {
-        grid-template-columns: 1fr;
-    }
+  .carousel-button {
+    position: absolute;
+    width: 50px;
+    top: 43%;
+    background-color: rgba(0, 0, 0, 0.77);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+  }
 }
 
 /* Responsive extremo (móviles pequeños) */
 @media (max-width: 480px) {
-    header img {
-        height: 40px;
-    }
+  header img {
+    height: 40px;
+  }
 
-    .hero {
-        padding: 3em 1em;
-    }
+  .hero {
+    padding: 3em 1em;
+  }
 
-    .article {
-        padding: 1.25em 0.75em;
-    }
+  .article {
+    padding: 1.25em 0.75em;
+  }
 
-    .agenda li {
-        font-size: 0.95rem;
-        padding: 0.75em;
-    }
+  .agenda li {
+    font-size: 0.95rem;
+    padding: 0.75em;
+  }
 
-    footer {
-        font-size: 0.9rem;
-    }
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Centrar logo y hacerlo grande (se mantiene) */
+.logo-centro {
+  display: block;
+  margin: 2em auto 1em auto;
+  max-width: 300px;
+  width: 80%;
+}
+
+/* Estilos para el contenedor principal del carrusel (se mantienen) */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  /* Ajusta esto según el tamaño deseado de tu carrusel */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el track del carrusel (contiene todas las diapositivas) (se mantienen) */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  /* Transición suave al cambiar de diapositiva */
+}
+
+/* Estilos para cada diapositiva individual (se mantienen) */
+.carousel-slide {
+  min-width: 100%;
+  /* Cada diapositiva ocupa el 100% del ancho del contenedor */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Estilos para los botones de navegación (anterior/siguiente) (se mantienen) */
+.carousel-button {
+  position: absolute;
+  top: 43%;
+
+  background-color: rgba(0, 0, 0, 0.77);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 50%;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+/* Estilos para los puntos de navegación (se mantienen) */
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.894);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #8aceffd5;
+  /* Color de los puntos activos/hover */
+}
+
+/* Sección Presentadores y Cantantes */
+.grid-personas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2em;
+  margin-top: 1.5em;
+  text-align: center;
+}
+
+.grid-personas img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.75em;
+}
+
+.grid-personas h3 {
+  margin: 0.5em 0;
+  color: var(--color-primary);
+}
+
+.grid-personas p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Patrocinadores */
+.patro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5em;
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 2em 0;
+}
+
+.patro-grid li {
+  background: var(--color-light);
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.patro-grid img {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.patro-grid-medium img {
+  max-width: 110px;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.patro-grid-low img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 0.3em;
 }

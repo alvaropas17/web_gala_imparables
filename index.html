@@ -1,107 +1,408 @@
 <!DOCTYPE html>
-<!-- Esta es la web de la gala imparables -->
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Inicio gala imparables</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles.css">
-  <title>Inicio gala imparables</title>
-</head>
-
-<body>
-  <header>
-    <img src="./imagenes/logo_imparables_oscuro.jpeg" alt="Logo oscuro gala imparables">
-    <nav>
-      <ul>
-        <li><a href="./index.html">Inicio</a></li>
-        <li><a href="./informacion.html">Información del evento</a></li>
-        <li><a href="./programacion.html">Programación del evento</a></li>
-        <li><a href="./fotos_y_videos.html">Fotos y vídeos</a></li>
-        <li><a href="./fila_0.html">Fila 0</a></li>
+  <body>
+    <header>
+      <div class="header-content">
+        <a href="" target="">
+          <img
+            src="./imagenes/logo_imparables_oscuro.jpeg"
+            alt="Logo oscuro gala imparables"
+          />
+        </a>
+        <!-- <button class="menu-toggle" aria-label="Abrir menú de navegación">
+          ☰
+        </button> -->
+      </div>
+    </header>
+    <nav class="barra-navegacion">
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#informacion">Información</a></li>
+        <li><a href="#premios">Premios</a></li>
+        <li><a href="#programacion">Programación</a></li>
+        <li><a href="#fotos-videos">Fotos y vídeos</a></li>
+        <li><a href="#entradas">Entradas</a></li>
+        <li><a href="#fila0">Fila 0</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Feedback</a></li>
       </ul>
     </nav>
-  </header>
-  <section id="inicio" class="hero">
-    <h1>Bienvenidos a Gala Imparables 2025</h1>
-    <p>Celebrando la superación, solidaridad e innovación en salud</p>
-  </section>
+    <section id="inicio" class="hero">
+      <h1>Bienvenidos a la Gala Imparables 2025</h1>
+      <h2>21/11/2025</h2>
+      <p>Celebrando la superación, solidaridad e innovación en salud</p>
+    </section>
 
-  <section id="informacion" class="article">
-    <h2>Información del evento</h2>
-    <p><b>Objetivo de la gala:</b> El reconocimiento a personas, instituciones y proyectos que inspiran y transforman en
-      el ámbito de la salud y el bienestar.</p>
-    <p><b>Carácter benéfico del evento:</b> Todos los fondos recaudados irán destinados a asociaciones seleccionadas por
-      cada uno de nuestros premiados.</p>
-    <p><b>Valores que representa el evento:</b> Superación, solidaridad, innovación y ciencia.</p>
-    <div id="fecha_y_ubicacion">
+    <section id="informacion" class="article">
+      <br />
+      <h2>Información del evento</h2>
+      <p>
+        <b>Objetivo de la gala:</b> El reconocimiento a personas, instituciones
+        y proyectos que inspiran y transforman en el ámbito de la salud y el
+        bienestar.
+      </p>
+      <p>
+        <b>Carácter benéfico del evento:</b> Todos los fondos recaudados irán
+        destinados a asociaciones seleccionadas por cada uno de nuestros
+        premiados.
+      </p>
+      <p>
+        <b>Valores que representa el evento:</b> Superación, solidaridad,
+        innovación y ciencia.
+      </p>
+      <div id="fecha_y_ubicacion">
+        <ul>
+          <li>Viernes 21 de noviembre de 2025</li>
+          <li>
+            <a href="https://maps.app.goo.gl/EiAMNEucbkqP4VZN7"
+              >Finca Buenavista</a
+            >
+          </li>
+          <li>20:00 h</li>
+          <li>Dress code: Etiqueta</li>
+        </ul>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.2391484239765!2d-1.1635109!3d37.924843200000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd637f1ca67e9f8b%3A0x194dc788b58320b9!2sFinca%20Buenavista!5e0!3m2!1ses!2ses!4v1751992752064!5m2!1ses!2ses"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="premios" class="article">
+      <br />
+      <h2>Premios</h2>
+      <p>
+        Hay un total de 5 premiados en diferentes áreas y un premio especial.
+      </p>
       <ul>
-        <li>Viernes 21 de noviembre de 2025</li>
-        <li><a href="https://maps.app.goo.gl/EiAMNEucbkqP4VZN7">Finca Buenavista</a></li>
-        <li>20:00 h</li>
-        <li>Dress code: Etiqueta</li>
+        <li>PREMIO A LA SUPERACIÓN EN EL DEPORTE</li>
+        <strong>Don Kike Siscar</strong>
+        <p>
+          Tenista profesional en silla internacional, miembro del equipo
+          nacional de tenis desde 2018 y ejemplo de esfuerzo, superación y
+          constancia
+        </p>
+        <li>PREMIO A LA INVESTIGACIÓN Y DIVULGACIÓN</li>
+        <strong>Doña María Trinidad Herrero</strong>
+        <p>
+          Catedrática de Anatomía y Embriología Humana de la Universidad de
+          Murcia, referente en investigación en neurociencia y presidenta de la
+          Real Academia de Medicina de la Región de Murcia.
+        </p>
+        <li>PREMIO A LA LABOR HUMANITARIA</li>
+        <strong>Misioneras de la caridad</strong>
+        <p>
+          Congregación fundada por Santa Teresa de Calcuta, que ofrece apoyo a
+          madres solteras y sus hijos, mujeres maltratadas o que son víctimas de
+          violencia de género.
+        </p>
+        <li>PREMIO A LA SOLIDARIDAD</li>
+        <strong
+          >Empresario y referente solidario en la Región de Murcia, cuya
+          trayectoria se ha caracterizado por su compromiso constante en causas
+          sociales y su apoyo a la investigación.</strong
+        >
+        <li>PREMIO AL COMPROMISO/BIENESTAR DE NIÑOS ENFERMOS Y SUS FAMILIAS</li>
+        <strong
+          >Sala Familiar Ronald McDonald (Hospital Virgen de la
+          Arrixaca)</strong
+        >
+        <p></p>
+        <li>PREMIO ESPECIAL</li>
       </ul>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.2391484239765!2d-1.1635109!3d37.924843200000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd637f1ca67e9f8b%3A0x194dc788b58320b9!2sFinca%20Buenavista!5e0!3m2!1ses!2ses!4v1750955172873!5m2!1ses!2ses"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </section>
+    </section>
 
-  <section id="premios" class="article">
-    <h2>Premios</h2>
-    <p>Tendremos un total de 5 premiados en diferentes áreas y un premio especial.</p>
-    <ul>
-      <li>PREMIO A LA SUPERACIÓN EN EL DEPORTE</li>
-      <li>PREMIO A LA INVESTIGACIÓN Y DIVULGACIÓN</li>
-      <li>PREMIO A LA LABOR HUMANITARIA</li>
-      <li>PREMIO A LA SOLIDARIDAD</li>
-      <li>PREMIO AL COMPROMISO/BIENESTAR DE NIÑOS ENFERMOS Y SUS FAMILIAS</li>
-      <li>PREMIO ESPECIAL</li>
-    </ul>
-  </section>
+    <section id="programacion" class="article">
+      <br />
+      <h2>Programación</h2>
+      <p>Detalles de la programación oficial de la gala:</p>
+      <ul class="agenda">
+        <li>
+          <strong>20:00 h</strong>– Recepción de invitados y cóctel de
+          bienvenida
+        </li>
+        <li><strong>21:30 h</strong>– Entrega de premios</li>
+        <li><strong>22:30 h</strong>– Cena</li>
+        <li><strong>23:30 h</strong>– Actuación musical</li>
+        <li>
+          <strong>00:00 h</strong>– Fiesta Imparables en la
+          <a href="https://maps.app.goo.gl/R7pN8Q5XvJAt1cro9"
+            >Cabaña de la Finca Buenavista</a
+          >
+        </li>
+      </ul>
+    </section>
 
-  <section id="programacion" class="article">
-    <h2>Programación</h2>
-    <p>Detalles de la programación oficial de la gala:</p>
-    <ul class="agenda">
-      <li><strong>20:00 h</strong> – Recepción de invitados y cóctel de bienvenida</li>
-      <li><strong>21:30 h</strong> – Entrega de premios</li>
-      <li><strong>22:30 h</strong> – Cena</li>
-      <li><strong>23:30 h</strong> – Actuación musical</li>
-      <li><strong>00:00 h</strong> – Fiesta Imparables en la Cabaña de la Finca Buenavista</li>
-    </ul>
-  </section>
+    <section id="patrocinadores" class="article">
+      <br />
+      <h2>Patrocinadores</h2>
+      <p>Los patrocinadores que han hecho posible esta gala son:</p>
 
+      <h3>Patrocinadores</h3>
+      <ul class="patro-grid">
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+      </ul>
 
-  <section id="patrocinadores" class="article">
-    <h2>Patrocinadores</h2>
-    <p>Los patrocinadores que han hecho posible esta gala son:</p>
-    <ul>
-      <li>Inversus</li>
-    </ul>
-  </section>
+      <h3>Colaborador especial</h3>
+      <ul class="patro-grid-medium">
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
 
-  <section id="fotos-videos" class="article">
-    <h2>Fotos y Videos</h2>
-    <p>Galería de fotos y videos de ediciones anteriores disponibles pronto.</p>
-  </section>
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+      </ul>
 
-  <section id="entradas" class="article">
-    <h2>Entradas</h2>
-    <p>Compra tus entradas para la gala. ¡No te lo pierdas!</p>
-    <button>Adquirir entradas</button>
-  </section>
+      <h3>Colaborador</h3>
+      <ul class="patro-grid-low">
+        <li class="patro-item">
+          <img
+            src="./imagenes/inversus-logo-MAXIMA-CALIDAD-R.png"
+            alt="Inversus"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+        <li class="patro-item">
+          <img
+            src="./imagenes/Vitaldent.svg.png"
+            alt="HealthCorp"
+            loading="lazy"
+            decoding="async"
+            class="img-contain"
+          />
+        </li>
+      </ul>
+    </section>
 
-  <section id="fila0" class="article">
-    <h2>Fila 0</h2>
-    <p>Apoya nuestra causa con una donación a través de Fila 0.</p>
-    <button>Donar ahora</button>
-  </section>
+    <!-- <section id="presentadores" class="article"> -->
+    <!-- <br /> -->
+    <!-- <h2>Presentadores y Cantantes</h2> -->
 
-  <footer>
-    <p>&copy; 2025 Gala Imparables. Todos los derechos reservados.</p>
-  </footer>
-</body>
+    <!-- <div class="grid-personas"> -->
+    <!-- Tarjeta 1 -->
+    <!-- <article class="persona"> -->
+    <!-- <picture class="ratio-box ratio-4x5"> -->
+    <!-- Formato moderno -->
+    <!-- <source srcset="./imagenes/presentador1-400.webp 400w, ./imagenes/presentador1-800.webp 800w" -->
+    <!-- type="image/webp" /> -->
+    <!-- Fallback -->
+    <!-- <img src="./imagenes/presentador1-800.jpg" -->
+    <!-- srcset="./imagenes/presentador1-400.jpg 400w, ./imagenes/presentador1-800.jpg 800w" -->
+    <!-- sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 300px" alt="Juan Pérez, presentador principal" -->
+    <!-- loading="lazy" decoding="async" class="img-cover" /> -->
+    <!-- </picture> -->
+    <!-- <h3>Juan Pérez</h3> -->
+    <!-- <p>Presentador principal con más de 15 años de experiencia en galas internacionales.</p> -->
+    <!-- </article> -->
 
+    <!-- Tarjeta 2 -->
+    <!-- <article class="persona"> -->
+    <!-- <picture class="ratio-box ratio-4x5"> -->
+    <!-- <source srcset="./imagenes/cantante1-400.webp 400w, ./imagenes/cantante1-800.webp 800w" type="image/webp" /> -->
+    <!-- <img src="./imagenes/cantante1-800.jpg" -->
+    <!-- srcset="./imagenes/cantante1-400.jpg 400w, ./imagenes/cantante1-800.jpg 800w" -->
+    <!-- sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 300px" alt="María López, cantante invitada" -->
+    <!-- loading="lazy" decoding="async" class="img-cover" /> -->
+    <!-- </picture> -->
+    <!-- <h3>María López</h3> -->
+    <!-- <p>Cantante reconocida internacionalmente, traerá su música en directo a la gala.</p> -->
+    <!-- </article> -->
+
+    <!-- Tarjeta 3 -->
+    <!-- <article class="persona"> -->
+    <!-- <picture class="ratio-box ratio-4x5"> -->
+    <!-- <source srcset="./imagenes/cantante2-400.webp 400w, ./imagenes/cantante2-800.webp 800w" type="image/webp" /> -->
+    <!-- <img src="./imagenes/cantante2-800.jpg" -->
+    <!-- srcset="./imagenes/cantante2-400.jpg 400w, ./imagenes/cantante2-800.jpg 800w" -->
+    <!-- sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 300px" alt="Carlos Gómez, artista emergente" -->
+    <!-- loading="lazy" decoding="async" class="img-cover" /> -->
+    <!-- </picture> -->
+    <!-- <h3>Carlos Gómez</h3> -->
+    <!-- <p>Artista emergente que sorprenderá con una actuación innovadora.</p> -->
+    <!-- </article> -->
+    <!-- </div> -->
+    <!-- </section> -->
+
+    <section id="fotos-videos" class="article">
+      <br />
+      <h2>Fotos y Videos</h2>
+      <p>
+        Galería de fotos y videos de ediciones anteriores disponibles pronto.
+      </p>
+
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img
+              src="./imagenes/SER-EL-MEJOR-2025-2-1024x683 (1).jpg"
+              alt="Foto de la Gala Imparables 1"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="./imagenes/Imagen-de-WhatsApp-2024-12-18-a-las-18.07.34_f60de7c8-1024x768.jpg"
+              alt="Foto de la Gala Imparables 2"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="./imagenes/Imagen-de-WhatsApp-2025-06-18-a-las-09.03.27_8ac49309.jpg"
+              alt="Foto de la Gala Imparables 3"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="./imagenes/Imagen-de-WhatsApp-2024-12-18-a-las-18.07.34_f60de7c8-1024x768.jpg"
+              alt="Foto de la Gala Imparables 4"
+            />
+          </div>
+          <div class="carousel-slide">
+            <img
+              src="./imagenes/Imagen-de-WhatsApp-2025-06-18-a-las-09.03.27_8ac49309.jpg"
+              alt="Foto de la Gala Imparables 5"
+            />
+          </div>
+        </div>
+
+        <button class="carousel-button prev" aria-label="Anterior">❮</button>
+        <button class="carousel-button next" aria-label="Siguiente">❯</button>
+
+        <div class="carousel-dots">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+          <span class="dot" data-slide="4"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="entradas" class="article">
+      <h2>Entradas</h2>
+      
+    </section> -->
+
+    <section id="fila0" class="article">
+      <!-- <br /> -->
+      <h2>Fila 0</h2>
+      <p>Para entrar a la entrada debes hacer una donación</p>
+      <button>Donar</button>
+    </section>
+
+    <section class="article">
+      <!-- <br /> -->
+      <h2>Comentarios</h2>
+      <form id="comentarioForm" method="post">
+        <label for="">
+          Comentario <br /><input type="text" name="Indoor" id="indoor" />
+        </label>
+        <br />
+        <button type="submit" name="submit">Publicar</button>
+      </form>
+    </section>
+    <footer>
+      <p>© 2025 Gala Imparables. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./carousel.js"></script>
+    <script src="./menu.js"></script>
+  </body>
 </html>
