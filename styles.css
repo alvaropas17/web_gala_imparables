@@ -281,6 +281,12 @@ body.menu-open {
   line-height: 1.4;
 }
 
+.img-premios {
+  width: 20em;
+  height: auto;
+  margin-left: 20vw;
+}
+
 
 /* 5. Sección Hero */
 .hero {
