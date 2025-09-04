@@ -801,9 +801,11 @@ footer {
 }
 
 /* Patrocinadores */
+
+
 .patro-grid {
   display: grid;
-  background-color: #ffc547;
+  /* background-color: #ffc547b9; */
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5em;
   list-style: none;
@@ -812,9 +814,8 @@ footer {
 }
 
 .patro-grid li {
-  background: var(--color-light);
   padding: 1em;
-  border-radius: 10px;
+  border-radius: 2px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
@@ -828,7 +829,7 @@ footer {
 .patro-grid-medium img {
   max-width: 110px;
   height: auto;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 .patro-grid-low img {
