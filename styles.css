@@ -732,6 +732,10 @@ footer {
 }
 
 /* Patrocinadores */
+/* .patro-item{
+  ;
+} */
+
 .patro-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -741,13 +745,13 @@ footer {
   margin: 1em 0 2em 0;
 }
 
-.patro-grid li {
+/* .patro-grid li {
   background: var(--color-light);
   padding: 1em;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
+} */
 
 .patro-grid img {
   max-width: 140px;
