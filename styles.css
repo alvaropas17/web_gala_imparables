@@ -446,7 +446,6 @@ body.menu-open {
   /* Quitar el absolute para que fluya en la fila */
 }
 
-
 @media (max-width: 768px) {
   #fecha_y_ubicacion iframe {
     position: static;
@@ -606,7 +605,6 @@ footer {
     width: 100%;
   }
 
-
   .hero {
     padding: 4em 1em;
   }
@@ -638,7 +636,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .carousel-slide {}
+  .carousel-slide {
+  }
 
   .carousel-button {
     position: absolute;
@@ -804,6 +803,7 @@ footer {
 /* Patrocinadores */
 .patro-grid {
   display: grid;
+  background-color: #ffc547;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5em;
   list-style: none;
