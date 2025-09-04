@@ -359,6 +359,29 @@ header img {
 /* =========================================================
    8) Patrocinadores
    ========================================================= */
+
+/* Estilos de fondo para cada nivel de patrocinador */
+#patrocinadores .patro-grid {
+  background: #e6f0f5; /* Un azul muy claro para los patrocinadores principales */
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+
+#patrocinadores .patro-grid-medium {
+  background: #f0f4f8; /* Un gris azulado claro para colaboradores especiales */
+  padding: 1em;
+  border-radius: 8px;
+  margin-bottom: 2em;
+}
+
+#patrocinadores .patro-grid-low {
+  background: #f8f8f8; /* Un gris muy claro para los colaboradores */
+  padding: 1em;
+  border-radius: 8px;
+}
+
+/* Estilos de los logos */
 #patrocinadores ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
