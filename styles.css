@@ -71,7 +71,7 @@ header {
 
 .header-top {
   display: flex;
-  justify-content: center; /* Centra los logos horizontalmente */
+  justify-content: flex-start; /* Alinea los logos a la izquierda */
   align-items: center;
   width: 100%;
 }
@@ -89,7 +89,7 @@ header img {
 }
 
 header img[alt="Logo Gala Imparables"] {
-  max-width: 100px;
+  max-width: 150px; /* Hace el logo de Salud 21 más grande */
 }
 
 .header-bottom-row {
@@ -170,6 +170,11 @@ header img[alt="Logo Gala Imparables"] {
 
 #redes-sociales {
   display: none;
+}
+
+.flex-nav-container {
+  display: flex;
+  align-items: center;
 }
 
 /* =========================================================
