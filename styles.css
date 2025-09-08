@@ -169,7 +169,9 @@ header img {
   text-align: center;
   padding: 6em 1em;
   padding-top: 104px;
+  margin-top: 141.797px;
 }
+
 
 .hero h1 {
   font-size: 3rem;
@@ -439,7 +441,6 @@ header img {
   background: #f5f8fa; /* Gris claro */
   border: 1px solid rgba(16, 42, 67, 0.05);
 }
-
 
 .patro-grid img {
   max-width: 140px;
