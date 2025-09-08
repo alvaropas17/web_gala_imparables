@@ -9,7 +9,8 @@
   --color-accent: #00c6a7;
   --color-dark: #102a43;
   --color-light: #ffffff;
-  --color-header-bg: #ffffff; /* Nuevo: Fondo blanco para el header */
+  --color-header-bg: #ffffff;
+  /* Nuevo: Fondo blanco para el header */
   --transition: 0.3s ease;
 }
 
@@ -29,7 +30,8 @@ html {
 body {
   font-family: "Lato", sans-serif;
   line-height: 1.6;
-  color: #131b46; /* Nuevo: Color de texto para el body */
+  color: #131b46;
+  /* Nuevo: Color de texto para el body */
   background: var(--color-bg);
 }
 
@@ -61,9 +63,7 @@ header {
 
 .header-content {
   display: flex;
-  flex-direction: column; /* Apila los elementos verticalmente */
-  align-items: center; /* Centra los elementos horizontalmente */
-  gap: 1.5em;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
@@ -71,16 +71,18 @@ header {
 
 .header-top {
   display: flex;
-  justify-content: flex-start; /* Alinea los logos a la izquierda */
+  justify-content: flex-start;
+  /* Alinea los logos a la izquierda */
   align-items: center;
   width: 100%;
 }
 
-.header-logos {
-  display: flex;
-  align-items: center;
-  gap: 1em;
+.header-logos img {
+  max-width: 190px;
+  /* subimos tamaño */
+  height: auto;
 }
+
 
 header img {
   max-width: 180px;
@@ -89,39 +91,34 @@ header img {
 }
 
 header img[alt="Logo Gala Imparables"] {
-  max-width: 150px; /* Hace el logo de Salud 21 más grande */
+  max-width: 150px;
+  /* Hace el logo de Salud 21 más grande */
 }
 
 .header-bottom-row {
-  display: flex;
-  width: 100%;
-  justify-content: center; /* Centra la barra de navegación y los botones */
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1.25em; /* Espacio entre el nav y el botón de compra */
+  column-gap: 1.25rem;
+  width: 100%;
 }
 
 .barra-navegacion {
-  background: none;
-  box-shadow: none;
-  position: static;
+  justify-self: center;
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 1.25em;
-  flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no caben */
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
 }
 
 .nav-links a {
-  color: #283583;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
   padding: 0.4em 0;
-  transition: color var(--transition);
+  font-weight: 600;
 }
 
 .nav-links a:hover {
@@ -143,9 +140,23 @@ header img[alt="Logo Gala Imparables"] {
   width: 100%;
 }
 
-.nav-button-wrapper {
-  display: flex;
-  align-items: center;
+.nav-button-wrapper .cta {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: .55em 1.2em;
+  /* altura similar a los links */
+  border-radius: 999px;
+  line-height: 1;
+  /* quita “extra” vertical */
+  transition: background var(--transition), transform var(--transition);
+}
+
+.nav-button-wrapper .cta:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
 }
 
 .nav-button-wrapper button {
@@ -168,8 +179,34 @@ header img[alt="Logo Gala Imparables"] {
   transform: translateY(-2px);
 }
 
+/* quitamos el display:none que tienes ahora mismo */
 #redes-sociales {
-  display: none;
+  display: block;
+}
+
+#redes-sociales ul {
+  display: flex;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#redes-sociales img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform .2s ease;
+}
+
+#redes-sociales img:hover {
+  transform: scale(1.1);
+}
+
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .flex-nav-container {
@@ -435,7 +472,8 @@ header img[alt="Logo Gala Imparables"] {
 
 /* Patrocinadores principales */
 #patrocinadores .patro-grid {
-  background: #e8f4fd; /* Color de fondo para la sección de patrocinadores principales */
+  background: #e8f4fd;
+  /* Color de fondo para la sección de patrocinadores principales */
   border: 1px solid rgba(0, 86, 145, 0.1);
   padding: 1.5em;
   border-radius: 12px;
@@ -443,7 +481,8 @@ header img[alt="Logo Gala Imparables"] {
 
 /* Colaboradores especiales */
 #patrocinadores .patro-grid-medium {
-  background: #e3f9f6; /* Color de fondo para la sección de colaboradores especiales */
+  background: #e3f9f6;
+  /* Color de fondo para la sección de colaboradores especiales */
   border: 1px solid rgba(0, 198, 167, 0.1);
   padding: 1.5em;
   border-radius: 12px;
@@ -451,7 +490,8 @@ header img[alt="Logo Gala Imparables"] {
 
 /* Colaboradores */
 #patrocinadores .patro-grid-low {
-  background: #f5f8fa; /* Color de fondo para la sección de colaboradores */
+  background: #f5f8fa;
+  /* Color de fondo para la sección de colaboradores */
   border: 1px solid rgba(16, 42, 67, 0.05);
   padding: 1.5em;
   border-radius: 12px;
@@ -459,9 +499,8 @@ header img[alt="Logo Gala Imparables"] {
 
 .patro-grid li {
   list-style: none;
-  background: var(
-    --color-light
-  ); /* Esto asegura que el fondo del <li> sea blanco */
+  background: var(--color-light);
+  /* Esto asegura que el fondo del <li> sea blanco */
   padding: 1em;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -642,37 +681,197 @@ footer {
     margin: 1em auto 0;
   }
 
-  /* Reorganiza el header en móvil */
-  header .header-content {
-    grid-template-columns: 1fr;
+  .header-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 .75rem;
+    min-height: 72px;
+    /* altura visual estable */
   }
 
-  header .header-logos,
   .header-bottom-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* logo | nav centrado | acciones */
+    align-items: center;
+    column-gap: clamp(1rem, 3vw, 2.5rem);
+    width: 100%;
+  }
+
+  /* Logo a la izquierda, tamaño legible */
+  .header-logos {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logos img {
+    max-width: 190px;
+    height: auto;
+  }
+
+  /* ======= NAV CENTRADO Y ESPACIADO ======= */
+  .barra-navegacion {
+    justify-self: center;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
-  }
-}
-
-@media (max-width: 480px) {
-  header img {
-    height: 40px;
-  }
-
-  .hero {
-    padding: 3em 1em;
+    gap: clamp(1rem, 2.6vw, 2.4rem);
+    /* << aire entre enlaces */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
+    /* evita cortes en dos líneas */
   }
 
-  .article {
-    padding: 1.25em 0.75em;
+  .nav-links li {
+    display: flex;
   }
 
-  .agenda li {
-    font-size: 0.95rem;
-    padding: 0.75em;
+  /* Enlaces: sin subrayado nativo ni morado/azul visitado */
+  .barra-navegacion .nav-links a,
+  .barra-navegacion .nav-links a:link,
+  .barra-navegacion .nav-links a:visited {
+    position: relative;
+    text-decoration: none;
+    color: #283583;
+    font-weight: 600;
+    padding: .35em 0;
+    line-height: 1;
+    white-space: nowrap;
+    /* “Fotos y vídeos” en una sola línea */
+    transition: color var(--transition);
   }
 
-  footer {
-    font-size: 0.9rem;
+  /* Hover limpio con subrayado animado (no el del navegador) */
+  .barra-navegacion .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    /* separa la línea del texto */
+    height: 2px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+
+  .barra-navegacion .nav-links a:hover {
+    color: var(--color-accent);
+  }
+
+  .barra-navegacion .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* ======= ACCIONES DERECHA (redes + botón) ======= */
+  .right-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-self: end;
+  }
+
+  /* Mostrar redes (quitamos el display:none que tenías) */
+  #redes-sociales {
+    display: block;
+  }
+
+  #redes-sociales ul {
+    display: flex;
+    gap: .75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #redes-sociales img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: none;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  #redes-sociales a:hover img {
+    transform: scale(1.08);
+    opacity: .9;
+  }
+
+  /* Botón CTA alineado con los links (misma línea base visual) */
+  .nav-button-wrapper .cta {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: .6em 1.25em;
+    border-radius: 999px;
+    line-height: 1;
+    transition: background var(--transition), transform var(--transition);
+  }
+
+  .nav-button-wrapper .cta:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  /* ======= RESPONSIVE CABECERA ======= */
+  @media (max-width: 1000px) {
+    .nav-links {
+      gap: 1.25rem;
+    }
+
+    .header-logos img {
+      max-width: 160px;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .header-bottom-row {
+      grid-template-columns: 1fr auto;
+      /* logo arriba, acciones dcha; nav abajo */
+      row-gap: .75rem;
+    }
+
+    .barra-navegacion {
+      grid-column: 1 / -1;
+      order: 2;
+    }
+
+    .nav-links {
+      flex-wrap: wrap;
+      gap: .9rem 1.1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header img {
+      height: 40px;
+    }
+
+    .hero {
+      padding: 3em 1em;
+    }
+
+    .article {
+      padding: 1.25em 0.75em;
+    }
+
+    .agenda li {
+      font-size: 0.95rem;
+      padding: 0.75em;
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
   }
 }
