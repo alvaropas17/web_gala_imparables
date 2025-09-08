@@ -29,7 +29,7 @@ html {
 body {
   font-family: "Lato", sans-serif;
   line-height: 1.6;
-  color: var(--color-dark);
+  color: #131b46; /* Nuevo: Color de texto para el body */
   background: var(--color-bg);
 }
 
@@ -71,7 +71,7 @@ header {
 
 .header-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centra los logos horizontalmente */
   align-items: center;
   width: 100%;
 }
@@ -95,8 +95,9 @@ header img[alt="Logo Gala Imparables"] {
 .header-bottom-row {
   display: flex;
   width: 100%;
-  justify-content: space-between; /* Alinea la navegación a un lado y el botón al otro */
+  justify-content: center; /* Centra la barra de navegación y los botones */
   align-items: center;
+  gap: 1.25em; /* Espacio entre el nav y el botón de compra */
 }
 
 .barra-navegacion {
@@ -106,12 +107,11 @@ header img[alt="Logo Gala Imparables"] {
 }
 
 .nav-links {
-  margin-left: 120px;
   list-style: none;
   display: flex;
   gap: 1.25em;
   flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no caben */
-  justify-content: center; /* Centra los elementos del nav */
+  justify-content: center;
   align-items: center;
 }
 
@@ -169,7 +169,7 @@ header img[alt="Logo Gala Imparables"] {
 }
 
 #redes-sociales {
-  display: none; /* Se ocultan para que no interfieran con el diseño */
+  display: none;
 }
 
 /* =========================================================
@@ -423,11 +423,40 @@ header img[alt="Logo Gala Imparables"] {
   gap: 1.5em;
   align-items: center;
   justify-items: center;
-  background-color: rgb(88, 174, 255);
+  /* El fondo del <ul> principal ha sido eliminado aquí */
+  padding: 1.5em;
+  border-radius: 12px;
 }
 
-#patrocinadores li {
+/* Patrocinadores principales */
+#patrocinadores .patro-grid {
+  background: #e8f4fd; /* Color de fondo para la sección de patrocinadores principales */
+  border: 1px solid rgba(0, 86, 145, 0.1);
+  padding: 1.5em;
+  border-radius: 12px;
+}
+
+/* Colaboradores especiales */
+#patrocinadores .patro-grid-medium {
+  background: #e3f9f6; /* Color de fondo para la sección de colaboradores especiales */
+  border: 1px solid rgba(0, 198, 167, 0.1);
+  padding: 1.5em;
+  border-radius: 12px;
+}
+
+/* Colaboradores */
+#patrocinadores .patro-grid-low {
+  background: #f5f8fa; /* Color de fondo para la sección de colaboradores */
+  border: 1px solid rgba(16, 42, 67, 0.05);
+  padding: 1.5em;
+  border-radius: 12px;
+}
+
+.patro-grid li {
   list-style: none;
+  background: var(
+    --color-light
+  ); /* Esto asegura que el fondo del <li> sea blanco */
   padding: 1em;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -436,70 +465,26 @@ header img[alt="Logo Gala Imparables"] {
   transition: all 0.3s ease;
 }
 
-/* Patrocinadores principales */
-#patrocinadores .patro-principal {
-  background: #e8f4fd; /* Azul claro */
-  border: 1px solid rgba(0, 86, 145, 0.1);
-}
-
-/* Colaboradores especiales */
-#patrocinadores .patro-especial {
-  background: #e3f9f6; /* Verde pálido */
-  border: 1px solid rgba(0, 198, 167, 0.1);
-}
-
-/* Colaboradores */
-#patrocinadores .patro-colaborador {
-  background: #f5f8fa; /* Gris claro */
-  border: 1px solid rgba(16, 42, 67, 0.05);
-}
-
 .patro-grid img {
   max-width: 140px;
   height: auto;
   margin-bottom: 0.5em;
 }
 
+.patro-grid-medium {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
 .patro-grid-medium img {
   max-width: 110px;
-  height: auto;
-  margin-bottom: 0.5em;
+}
+
+.patro-grid-low {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 .patro-grid-low img {
   max-width: 100px;
-  height: auto;
-  margin-bottom: 0.3em;
-}
-
-/* =========================================================
-   Responsive
-   ========================================================= */
-@media (max-width: 900px) {
-  .patro-grid-medium img {
-    max-width: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .patro-grid img {
-    max-width: 100px;
-  }
-}
-
-/* =========================================================
-   Responsive
-   ========================================================= */
-@media (max-width: 900px) {
-  .patro-grid-medium img {
-    max-width: 90px;
-  }
-}
-
-@media (max-width: 480px) {
-  .patro-grid img {
-    max-width: 100px;
-  }
 }
 
 /* =========================================================
