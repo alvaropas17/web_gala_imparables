@@ -61,7 +61,7 @@ header {
   padding: .05rem 0;
   position: fixed;
   top: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(180, 0, 0, 0.06);
   width: 100%;
   z-index: 999;
 }
@@ -207,8 +207,9 @@ header {
   }
 
   .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(./imagenes/manos_y_caras.jpeg);
+    background: linear-gradient(rgb(83 83 83 / 50%), rgb(91 91 91 / 50%)), url(./imagenes/manos_y_caras.jpeg);
+
+
     color: var(--color-light);
     text-align: center;
     padding: 6em 1em;
@@ -231,15 +232,11 @@ header {
    3) Hero
    ========================================================= */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./imagenes/manos_y_caras.jpeg);
+  background: linear-gradient(rgb(83 83 83 / 50%), rgb(91 91 91 / 50%)), url(./imagenes/manos_y_caras.jpeg);
   color: var(--color-light);
   text-align: center;
   padding: 2em 1em;
-  /* This is good for desktop */
   padding-top: 151px;
-  /* To account for the header on desktop */
-  /* Remove the margin-top property completely */
 }
 
 .hero h1 {
