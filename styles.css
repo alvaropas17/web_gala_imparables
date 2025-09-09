@@ -662,9 +662,9 @@ footer {
     margin: 2em 1em;
   }
 
-  .hero {
+  /* .hero {
     padding: 4em 1em;
-  }
+  } */
 
   .hero h1 {
     font-size: clamp(1.8rem, 6vw, 2.5rem);
@@ -690,9 +690,9 @@ footer {
     max-width: 140px;
   }
 
-  .hero {
+  /* .hero {
     padding: 3em 1em;
-  }
+  } */
 
   .article {
     padding: 1.25em 0.75em;
