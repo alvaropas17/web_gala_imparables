@@ -216,8 +216,13 @@ header {
     /* Centra el logo */
   }
 
-  .hero {
-    margin-top: 0;
+  .hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(./imagenes/manos_y_caras.jpeg);
+    color: var(--color-light);
+    text-align: center;
+    padding: 6em 1em;
+    padding-top: 150px;
   }
 
   .hero-button-wrapper.mobile-only {
@@ -241,9 +246,9 @@ header {
     url(./imagenes/manos_y_caras.jpeg);
   color: var(--color-light);
   text-align: center;
-  padding: 6em 1em;
+  padding: 2em 1em;
   /* This is good for desktop */
-  padding-top: 141px;
+  padding-top: 151px;
   /* To account for the header on desktop */
   /* Remove the margin-top property completely */
 }
