@@ -81,8 +81,8 @@ header {
 }
 
 .header-logos img {
-  max-width: 190px;
   height: auto;
+  margin-right: 30px;
 }
 
 .nav-links {
@@ -630,7 +630,7 @@ footer {
     width: 180px;
     height: auto;
     display: block;
-    margin: 0px auto;
+    margin: 0px auto
   }
 }
 
