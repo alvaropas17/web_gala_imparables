@@ -58,7 +58,7 @@ li {
    ========================================================= */
 header {
   background: var(--color-header-bg);
-  padding: 1.05rem 0;
+  padding: .05rem 0;
   position: fixed;
   top: 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -216,7 +216,7 @@ header {
     /* Centra el logo */
   }
 
-  .hero{
+  .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url(./imagenes/manos_y_caras.jpeg);
     color: var(--color-light);
