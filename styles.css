@@ -170,15 +170,42 @@ header {
 /* Mobile Adjustments */
 @media (max-width: 780px) {
   header {
-    display: none;
+    .barra-navegacion {
+      display: none;
+    }
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
     /* Hide the entire header on mobile */
+  }
+
+  body {
+    font-size: 1.125rem;
+    /* Ajustar el tamaño base de la fuente */
+  }
+
+  .article p,
+  .article li {
+    font-size: 1rem;
+    /* O cualquier valor que mejore la legibilidad */
+  }
+
+  .article {
+    padding: 2em 1.5em;
+    /* Aumenta el padding para dar más espacio */
+    margin: 2em 0.5em;
+    /* Reduce el margin horizontal para no hacer la página demasiado estrecha */
+  }
+
+  .header-logos {
+    text-align: center;
+    margin: 0 auto;
+    /* Centra el logo */
   }
 
   .hero {
     margin-top: 0;
-    /* Remove margin-top since header is hidden */
-    padding-top: 3em;
-    /* Adjust padding to prevent content from being too close to the top */
   }
 
   .hero-button-wrapper.mobile-only {
@@ -203,8 +230,10 @@ header {
   color: var(--color-light);
   text-align: center;
   padding: 6em 1em;
-  padding-top: 104px;
-  margin-top: 141.797px;
+  /* This is good for desktop */
+  padding-top: 141px;
+  /* To account for the header on desktop */
+  /* Remove the margin-top property completely */
 }
 
 .hero h1 {
@@ -595,7 +624,10 @@ footer {
   }
 
   .header-logos img {
-    max-width: 160px;
+    width: 180px;
+    height: auto;
+    display: block;
+    margin: 0px auto;
   }
 }
 
