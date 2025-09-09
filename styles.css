@@ -173,47 +173,37 @@ header {
 }
 
 /* Hide hero button on desktop */
-@media (min-width: 781px) {
-  .hero-button-wrapper.mobile-only {
-    display: none;
-  }
-}
-
 /* Mobile Adjustments */
 @media (max-width: 780px) {
   header {
+
+    /* Hide the navigation links on mobile */
     .barra-navegacion {
       display: none;
     }
 
     padding-top: 10px;
     padding-bottom: 10px;
-
-    /* Hide the entire header on mobile */
   }
 
+  /* Keep other mobile styles as they are */
   body {
     font-size: 1.125rem;
-    /* Ajustar el tamaño base de la fuente */
   }
 
   .article p,
   .article li {
     font-size: 1rem;
-    /* O cualquier valor que mejore la legibilidad */
   }
 
   .article {
     padding: 2em 1.5em;
-    /* Aumenta el padding para dar más espacio */
     margin: 2em 0.5em;
-    /* Reduce el margin horizontal para no hacer la página demasiado estrecha */
   }
 
   .header-logos {
     text-align: center;
     margin: 0 auto;
-    /* Centra el logo */
   }
 
   .hero {
@@ -227,7 +217,6 @@ header {
 
   .hero-button-wrapper.mobile-only {
     display: block;
-    /* Show the button in the hero section on mobile */
   }
 
   .hero-button-wrapper .cta {
