@@ -10,7 +10,6 @@
   --color-dark: #102a43;
   --color-light: #ffffff;
   --color-header-bg: #ffffff;
-  /* Nuevo: Fondo blanco para el header */
   --transition: 0.3s ease;
 }
 
@@ -31,7 +30,6 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.6;
   color: #131b46;
-  /* Nuevo: Color de texto para el body */
   background: var(--color-bg);
 }
 
@@ -62,63 +60,41 @@ header {
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
 }
 
-.header-top {
+.header-bottom-row {
   display: flex;
-  justify-content: flex-start;
-  /* Alinea los logos a la izquierda */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: nowrap;
+  /* Evita que se rompa en varias líneas en desktop */
 }
 
 .header-logos img {
   max-width: 190px;
-  /* subimos tamaño */
   height: auto;
-}
-
-
-header img {
-  max-width: 180px;
-  height: auto;
-  border-radius: 10px;
-}
-
-header img[alt="Logo Gala Imparables"] {
-  max-width: 150px;
-  /* Hace el logo de Salud 21 más grande */
-}
-
-.header-bottom-row {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  column-gap: 1.25rem;
-  width: 100%;
-}
-
-.barra-navegacion {
-  justify-self: center;
 }
 
 .nav-links {
   display: flex;
   gap: 1.25em;
   align-items: center;
-  justify-content: center;
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
   padding: 0.4em 0;
   font-weight: 600;
+  color: var(--color-dark);
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -129,7 +105,7 @@ header img[alt="Logo Gala Imparables"] {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -4px;
   width: 0;
   height: 2px;
   background: var(--color-accent);
@@ -140,48 +116,27 @@ header img[alt="Logo Gala Imparables"] {
   width: 100%;
 }
 
+.right-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .nav-button-wrapper .cta {
   display: inline-block;
   background: var(--color-accent);
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  padding: .55em 1.2em;
-  /* altura similar a los links */
+  padding: .6em 1.25em;
   border-radius: 999px;
   line-height: 1;
-  /* quita “extra” vertical */
   transition: background var(--transition), transform var(--transition);
 }
 
 .nav-button-wrapper .cta:hover {
   background: var(--color-primary);
   transform: translateY(-2px);
-}
-
-.nav-button-wrapper button {
-  background: var(--color-accent);
-  border: none;
-  padding: 0.75em 1.5em;
-  border-radius: 50px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
-}
-
-.nav-button-wrapper button a {
-  color: #fff;
-  font-weight: 700;
-}
-
-.nav-button-wrapper button:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-}
-
-/* quitamos el display:none que tienes ahora mismo */
-#redes-sociales {
-  display: block;
 }
 
 #redes-sociales ul {
@@ -201,17 +156,6 @@ header img[alt="Logo Gala Imparables"] {
 
 #redes-sociales img:hover {
   transform: scale(1.1);
-}
-
-.right-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.flex-nav-container {
-  display: flex;
-  align-items: center;
 }
 
 /* =========================================================
@@ -278,13 +222,11 @@ header img[alt="Logo Gala Imparables"] {
 
 .meta-list {
   list-style: none;
-  /* 🔹 Elimina los puntos */
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  /* un poco más de aire entre chips */
 }
 
 .chip {
@@ -293,10 +235,8 @@ header img[alt="Logo Gala Imparables"] {
   gap: 0.6rem;
   padding: 0.55rem 0.9rem;
   background: #f9fbfc;
-  /* Fondo más sutil */
   border: 1px solid rgba(0, 86, 145, 0.08);
   border-radius: 10px;
-  /* Menos pastilla, más tarjeta */
   font-weight: 500;
   color: var(--color-dark);
 }
@@ -355,16 +295,12 @@ header img[alt="Logo Gala Imparables"] {
   transform: translateY(-1px);
 }
 
-/* elimina rellenos antiguos del bloque original */
 #fecha_y_ubicacion {
   padding-bottom: 0;
 }
 
 /* =========================================================
    6) Premios (grid texto + imagen)
-   ========================================================= */
-/* =========================================================
-   6) Premios (grid texto + imagen) — ZIGZAG
    ========================================================= */
 .premio-item {
   display: grid;
@@ -377,12 +313,10 @@ header img[alt="Logo Gala Imparables"] {
   border-bottom: 1px solid #e0e0e0;
 }
 
-/* Zigzag: en los elementos pares se invierte el orden */
 .premio-item:nth-child(even) {
   grid-template-areas: "imagen texto";
 }
 
-/* Áreas */
 .premio-info {
   grid-area: texto;
 }
@@ -394,7 +328,6 @@ header img[alt="Logo Gala Imparables"] {
   align-items: center;
 }
 
-/* Estética de imagen */
 .premio-imagen img {
   width: 100%;
   max-width: min(25rem, 120%);
@@ -403,7 +336,6 @@ header img[alt="Logo Gala Imparables"] {
   box-shadow: 0 6px 18px rgba(16, 42, 67, 0.08);
 }
 
-/* Tipos dentro del bloque de texto */
 .premio-info h3 {
   color: var(--color-primary);
   margin-bottom: 0.25em;
@@ -413,23 +345,6 @@ header img[alt="Logo Gala Imparables"] {
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.1em;
-}
-
-/* Responsive: en móvil quitamos el zigzag (siempre texto → imagen) */
-@media (max-width: 900px) {
-  .premio-item {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "texto"
-      "imagen";
-    gap: 1.25rem;
-  }
-
-  .premio-item:nth-child(even) {
-    grid-template-areas:
-      "texto"
-      "imagen";
-  }
 }
 
 /* =========================================================
@@ -465,33 +380,26 @@ header img[alt="Logo Gala Imparables"] {
   gap: 1.5em;
   align-items: center;
   justify-items: center;
-  /* El fondo del <ul> principal ha sido eliminado aquí */
   padding: 1.5em;
   border-radius: 12px;
 }
 
-/* Patrocinadores principales */
 #patrocinadores .patro-grid {
   background: #e8f4fd;
-  /* Color de fondo para la sección de patrocinadores principales */
   border: 1px solid rgba(0, 86, 145, 0.1);
   padding: 1.5em;
   border-radius: 12px;
 }
 
-/* Colaboradores especiales */
 #patrocinadores .patro-grid-medium {
   background: #e3f9f6;
-  /* Color de fondo para la sección de colaboradores especiales */
   border: 1px solid rgba(0, 198, 167, 0.1);
   padding: 1.5em;
   border-radius: 12px;
 }
 
-/* Colaboradores */
 #patrocinadores .patro-grid-low {
   background: #f5f8fa;
-  /* Color de fondo para la sección de colaboradores */
   border: 1px solid rgba(16, 42, 67, 0.05);
   padding: 1.5em;
   border-radius: 12px;
@@ -500,7 +408,6 @@ header img[alt="Logo Gala Imparables"] {
 .patro-grid li {
   list-style: none;
   background: var(--color-light);
-  /* Esto asegura que el fondo del <li> sea blanco */
   padding: 1em;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
@@ -644,6 +551,18 @@ footer {
 /* =========================================================
    12) Responsive
    ========================================================= */
+
+/* --- Tablet & Desktop --- */
+@media (max-width: 1000px) {
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .header-logos img {
+    max-width: 160px;
+  }
+}
+
 @media (max-width: 900px) {
   .info-grid {
     grid-template-columns: 1fr;
@@ -655,7 +574,52 @@ footer {
 
   .premio-item {
     grid-template-columns: 1fr;
-    gap: 1.5em;
+    grid-template-areas:
+      "texto"
+      "imagen";
+    gap: 1.25rem;
+  }
+
+  .premio-item:nth-child(even) {
+    grid-template-areas:
+      "texto"
+      "imagen";
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 780px) {
+  .header-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    row-gap: 0.75rem;
+  }
+
+  .barra-navegacion {
+    grid-column: 1 / -1;
+    order: 2;
+    margin-top: 0.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem 1.1rem;
+  }
+
+  .right-actions {
+    order: 1;
+    justify-self: end;
+  }
+
+  .header-logos {
+    justify-self: start;
+  }
+
+  .article {
+    padding: 1.5em 1em;
+    margin: 2em 1em;
   }
 
   .hero {
@@ -670,208 +634,36 @@ footer {
     font-size: clamp(1rem, 4vw, 1.25rem);
   }
 
-  .article {
-    padding: 1.5em 1em;
-    margin: 2em 1em;
-  }
-
   button {
     width: 100%;
     max-width: 320px;
     margin: 1em auto 0;
   }
 
-  .header-content {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 .75rem;
-    min-height: 72px;
-    /* altura visual estable */
+  .patro-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
+}
 
-  .header-bottom-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    /* logo | nav centrado | acciones */
-    align-items: center;
-    column-gap: clamp(1rem, 3vw, 2.5rem);
-    width: 100%;
-  }
-
-  /* Logo a la izquierda, tamaño legible */
-  .header-logos {
-    display: flex;
-    align-items: center;
-  }
-
+@media (max-width: 480px) {
   .header-logos img {
-    max-width: 190px;
-    height: auto;
+    max-width: 140px;
   }
 
-  /* ======= NAV CENTRADO Y ESPACIADO ======= */
-  .barra-navegacion {
-    justify-self: center;
+  .hero {
+    padding: 3em 1em;
   }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(1rem, 2.6vw, 2.4rem);
-    /* << aire entre enlaces */
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: nowrap;
-    /* evita cortes en dos líneas */
+  .article {
+    padding: 1.25em 0.75em;
   }
 
-  .nav-links li {
-    display: flex;
+  .agenda li {
+    font-size: 0.95rem;
+    padding: 0.75em;
   }
 
-  /* Enlaces: sin subrayado nativo ni morado/azul visitado */
-  .barra-navegacion .nav-links a,
-  .barra-navegacion .nav-links a:link,
-  .barra-navegacion .nav-links a:visited {
-    position: relative;
-    text-decoration: none;
-    color: #283583;
-    font-weight: 600;
-    padding: .35em 0;
-    line-height: 1;
-    white-space: nowrap;
-    /* “Fotos y vídeos” en una sola línea */
-    transition: color var(--transition);
-  }
-
-  /* Hover limpio con subrayado animado (no el del navegador) */
-  .barra-navegacion .nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -4px;
-    /* separa la línea del texto */
-    height: 2px;
-    background: var(--color-accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-  }
-
-  .barra-navegacion .nav-links a:hover {
-    color: var(--color-accent);
-  }
-
-  .barra-navegacion .nav-links a:hover::after {
-    transform: scaleX(1);
-  }
-
-  /* ======= ACCIONES DERECHA (redes + botón) ======= */
-  .right-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-self: end;
-  }
-
-  /* Mostrar redes (quitamos el display:none que tenías) */
-  #redes-sociales {
-    display: block;
-  }
-
-  #redes-sociales ul {
-    display: flex;
-    gap: .75rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  #redes-sociales img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    filter: none;
-    transition: transform .2s ease, opacity .2s ease;
-  }
-
-  #redes-sociales a:hover img {
-    transform: scale(1.08);
-    opacity: .9;
-  }
-
-  /* Botón CTA alineado con los links (misma línea base visual) */
-  .nav-button-wrapper .cta {
-    display: inline-block;
-    background: var(--color-accent);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    padding: .6em 1.25em;
-    border-radius: 999px;
-    line-height: 1;
-    transition: background var(--transition), transform var(--transition);
-  }
-
-  .nav-button-wrapper .cta:hover {
-    background: var(--color-primary);
-    transform: translateY(-2px);
-  }
-
-  /* ======= RESPONSIVE CABECERA ======= */
-  @media (max-width: 1000px) {
-    .nav-links {
-      gap: 1.25rem;
-    }
-
-    .header-logos img {
-      max-width: 160px;
-    }
-  }
-
-  @media (max-width: 780px) {
-    .header-bottom-row {
-      grid-template-columns: 1fr auto;
-      /* logo arriba, acciones dcha; nav abajo */
-      row-gap: .75rem;
-    }
-
-    .barra-navegacion {
-      grid-column: 1 / -1;
-      order: 2;
-    }
-
-    .nav-links {
-      flex-wrap: wrap;
-      gap: .9rem 1.1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    header img {
-      height: 40px;
-    }
-
-    .hero {
-      padding: 3em 1em;
-    }
-
-    .article {
-      padding: 1.25em 0.75em;
-    }
-
-    .agenda li {
-      font-size: 0.95rem;
-      padding: 0.75em;
-    }
-
-    footer {
-      font-size: 0.9rem;
-    }
+  footer {
+    font-size: 0.9rem;
   }
 }
