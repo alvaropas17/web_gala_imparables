@@ -172,6 +172,12 @@ header {
   font-size: 1.9rem;
 }
 
+#logo-impagables img {
+  height: 111px;
+  width: auto;
+  /* margin-left: 20px; */
+}
+
 /* Hide hero button on desktop */
 /* Mobile Adjustments */
 @media (max-width: 780px) {
@@ -622,7 +628,6 @@ footer {
    ========================================================= */
 
 /* --- Tablet & Desktop --- */
-/* --- Tablet & Desktop --- */
 @media (max-width: 1000px) {
   .nav-links {
     gap: 1.25rem;
@@ -636,7 +641,14 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 968.88px) {
+  #logo-impagables {
+    max-width: 375px;
+    height: auto;
+    display: block;
+    margin: 0px auto
+  }
+
   .info-grid {
     grid-template-columns: 1fr;
   }
@@ -658,11 +670,8 @@ footer {
       "texto"
       "imagen";
   }
-}
 
 
-/* --- Mobile --- */
-@media (max-width: 780px) {
   #logo-inversus {
     display: none;
   }
