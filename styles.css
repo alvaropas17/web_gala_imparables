@@ -712,7 +712,14 @@ footer {
   }
 
   .carousel-button {
-    top: 50%;
     transform: translateY(-50%);
+  }
+
+  .carousel-button.prev {
+    transform: translateX(-50%);
+  }
+
+  .carousel-button.next {
+    transform: translateX(50%);
   }
 }
