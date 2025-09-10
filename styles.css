@@ -644,8 +644,7 @@ footer {
 @media (max-width: 968px) {
 
   #logo-impagables {
-    max-height: 92px;
-    width: auto;
+    max-width: 18em;
     /* margin-left: 10px; */
   }
 
@@ -674,9 +673,8 @@ footer {
 
 /* --- Mobile --- */
 @media (max-width: 780px) {
-  #logo-impagables img {
-    max-height: 60px;
-    width: auto;
+  #logo-impagables {
+    max-width: 21em;
     /* margin-left: 10px; */
   }
 
