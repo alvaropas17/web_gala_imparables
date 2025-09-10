@@ -713,6 +713,7 @@ footer {
 
   .carousel-button {
     transform: translateY(-50%);
+    border-radius: 30px;
   }
 
   .carousel-button.prev {
