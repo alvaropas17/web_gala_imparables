@@ -675,7 +675,8 @@ footer {
 @media (max-width: 780px) {
   #logo-impagables {
     max-width: 21em;
-    /* margin-left: 10px; */
+    padding-right: 1em
+      /* margin-left: 10px; */
   }
 
   #logo-inversus {
