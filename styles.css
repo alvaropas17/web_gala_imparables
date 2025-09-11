@@ -264,7 +264,6 @@ header {
 }
 
 
-
 /* =========================================================
    4) Contenedor de sección (.article)
    ========================================================= */
@@ -381,9 +380,13 @@ header {
    ========================================================= */
 .premio-item {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 0.9fr 0.85fr;
+  grid-template-areas: "texto imagen";
+  gap: clamp(1rem, 3vw, 2rem);
   align-items: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  padding-bottom: clamp(1rem, 2vw, 1.5rem);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .premio-item:nth-child(even) {
