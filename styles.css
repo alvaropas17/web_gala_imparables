@@ -38,6 +38,7 @@ body {
   line-height: 1.6;
   color: #131b46;
   background: var(--color-bg);
+  overflow-x: hidden;
 }
 
 h1,
