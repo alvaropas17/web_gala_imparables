@@ -62,13 +62,13 @@ header {
   padding: .05rem 0;
   position: fixed;
   top: 0;
-  box-shadow: 0 4px 12px rgba(180, 0, 0, 0.06);
+  box-shadow: 0 1.02vw 1.02vw rgba(180, 0, 0, 0.06);
   width: 100%;
   z-index: 1000;
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 305.34vw;
   margin: 0 auto;
   padding: 0 1em;
 }
@@ -261,6 +261,11 @@ header {
 .hero p {
   font-size: 1.25rem;
   font-weight: 300;
+}
+
+
+.mobile-only {
+  display: none;
 }
 
 /* =========================================================
@@ -670,10 +675,21 @@ footer {
       "texto"
       "imagen";
   }
+
+  .mobile-only {
+    display: flexbox;
+
+    justify-content: center;
+  }
 }
 
 /* --- Mobile --- */
-@media (max-width: 780px) {
+@media (max-width: 768px) {
+
+  .mobile-only {
+    display: flex;
+  }
+
   #logo-impagables {
     max-width: 21em;
     padding-right: 1em
