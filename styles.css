@@ -63,7 +63,7 @@ header {
   top: 0;
   box-shadow: 0 4px 12px rgba(180, 0, 0, 0.06);
   width: 100%;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .header-content {
@@ -677,6 +677,10 @@ footer {
     max-width: 21em;
     padding-right: 1em
       /* margin-left: 10px; */
+  }
+
+  #texto-footer {
+    font-size: 0.9rem;
   }
 
 
