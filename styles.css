@@ -679,6 +679,31 @@ footer {
       /* margin-left: 10px; */
   }
 
+
+  .carousel-button.next {
+    /* the element was button.carousel-button.next */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .carousel-button.prev {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: none !important;
+    /* Remove the translation */
+    transition: none !important;
+    /* Remove the transition effect */
+  }
+
+  button.carousel-button.next {
+    transform: none !important;
+    /* Remove the translation */
+    transition: none !important;
+    /* Remove the transition effect */
+  }
+
   #logo-inversus {
     display: none;
   }
@@ -714,13 +739,5 @@ footer {
   .carousel-button {
     transform: translateY(-50%);
     border-radius: 30px;
-  }
-
-  .carousel-button.prev {
-    transform: translateX(-50%);
-  }
-
-  .carousel-button.next {
-    transform: translateX(50%);
   }
 }
