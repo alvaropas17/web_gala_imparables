@@ -5,12 +5,19 @@
 
 /* Animación de la flecha */
 @keyframes bounceArrow {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-20px);
   }
+
   60% {
     transform: translateY(-10px);
   }
@@ -60,10 +67,6 @@ body {
   color: #131b46;
   background: var(--color-bg);
   overflow-x: hidden;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  left: 0;
 }
 
 h1,
@@ -95,11 +98,7 @@ header {
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 0 1em;
 }
 
 .header-bottom-row {
@@ -820,17 +819,17 @@ footer {
     font-size: 0.9em;
     gap: 1em;
   }
-  
+
   nav a {
     padding: 0.8em 1em;
   }
-  
+
   .header-content {
     padding: 0 0.5em;
   }
-  
+
   .header-bottom-row {
     flex-wrap: wrap;
     justify-content: center;
   }
-  }
+}
