@@ -833,3 +833,41 @@ footer {
     justify-content: center;
   }
 }
+
+/* Media query para móviles muy pequeños (iPhone SE, Galaxy S5, etc.) */
+@media screen and (max-width: 375px) {
+  .nav-links {
+    font-size: 0.85em;
+    gap: 0.5em;
+  }
+
+  nav a {
+    padding: 0.6em 0.8em;
+  }
+
+  .header-content h1 {
+    font-size: 1.8em;
+  }
+
+  .header-content p {
+    font-size: 0.9em;
+  }
+
+  .section-title {
+    font-size: 1.6em;
+  }
+
+  .patro-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8em;
+  }
+
+  .carousel-button {
+    padding: 0.5em;
+  }
+
+  button {
+    max-width: 280px;
+    font-size: 0.9em;
+  }
+}
