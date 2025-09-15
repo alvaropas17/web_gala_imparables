@@ -1,4 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Animación de la flecha
+    const arrow = document.querySelector('img[src*="doble-flecha-abajo"]');
+    if (arrow) {
+        // Verifica si el usuario ya ha visitado la página antes
+        if (!sessionStorage.getItem('arrowAnimationShown')) {
+            // Configura la animación inicial
+            arrow.style.opacity = '0';
+            arrow.style.transform = 'translateY(-20px)';
+            arrow.style.transition = 'opacity 1s ease-in-out, transform 0.5s ease-in-out';
+
+            // Muestra la flecha con animación después de un segundo
+            setTimeout(() => {
+                arrow.style.opacity = '1';
+                arrow.style.transform = 'translateY(0)';
+                
+                // Inicia la animación de rebote
+                let isUp = false;
+                const bounceInterval = setInterval(() => {
+                    if (isUp) {
+                        arrow.style.transform = 'translateY(0)';
+                    } else {
+                        arrow.style.transform = 'translateY(-10px)';
+                    }
+                    isUp = !isUp;
+                }, 1000);
+
+                // Detiene la animación cuando el usuario hace scroll
+                const stopAnimation = () => {
+                    clearInterval(bounceInterval);
+                    window.removeEventListener('scroll', stopAnimation);
+                };
+                window.addEventListener('scroll', stopAnimation);
+            }, 1000);
+
+            // Marca que la animación ya se mostró en esta sesión
+            sessionStorage.setItem('arrowAnimationShown', 'true');
+        }
+    }
+
     const hamburgerButton = document.querySelector(".hamburger-menu");
     const navLinks = document.querySelector(".nav-links");
     const body = document.body;
