@@ -129,6 +129,8 @@ nav .nav-links {
   padding: 0;
   flex-grow: 1;
   justify-content: flex-end;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -801,5 +803,27 @@ footer {
   .carousel-button {
     transform: translateY(-50%);
     border-radius: 30px;
+  }
+}
+
+/* Media query para dispositivos móviles específicos como el Honor 200 Pro */
+@media screen and (max-width: 480px) {
+  .nav-links {
+    font-size: 0.9em;
+    gap: 1em;
+  }
+  
+  nav a {
+    padding: 0.8em 1em;
+  }
+  
+  .header-content {
+    padding: 0 0.5em;
+  }
+  
+  .header-bottom-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
   }
 }
