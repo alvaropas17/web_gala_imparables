@@ -232,6 +232,12 @@ nav a {
   /* margin-left: 20px; */
 }
 
+.instagram-media {
+  /* the element was iframe#instagram-embed-0 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (max-width: 780px) {
   nav {
     position: fixed;
