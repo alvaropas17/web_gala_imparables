@@ -582,9 +582,11 @@ nav a {
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-/* .patro-grid-low img {
-  max-width: 100px;
-} */
+.patro-grid-low img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
 
 /* =========================================================
    9) Carrusel (fotos y vídeos)
