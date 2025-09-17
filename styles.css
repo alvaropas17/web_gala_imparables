@@ -570,6 +570,12 @@ nav a {
   margin-bottom: 0.5em;
 }
 
+.patro-principal img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
 .patro-grid-medium {
   grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
 }
